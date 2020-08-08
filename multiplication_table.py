@@ -1,6 +1,11 @@
-# version 0.1
+# version 0.2
 
 for i in range(1, 10):
     for j in range(1, 10):
-        print(i * j,end=" ")
+        x = i * j
+        if x < 10 :
+            print("  ", end="")
+        else:
+            print(" ", end="")
+        print(x, end="|")
     print()
