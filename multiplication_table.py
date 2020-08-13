@@ -1,4 +1,4 @@
-#   version 0.9.0
+#   version 0.9.1
 #   Made by BlackJokerSmile
 # github link:  https://github.com/BlackJokerSmile
 # gitnub repo: https://github.com/BlackJokerSmile/myProjects
@@ -21,25 +21,25 @@ def multiply(x, y):
 
     # print the x to y multiplication table specified by arguments input
 
-def multy_table(column_lenght, line_lenght):
-    print("Multyplication table {0} by {1}: ".format(column_lenght, line_lenght))
-    for c in range(0, column_lenght + 1):
-        interlinear(line_lenght)
+def multy_table(columns_number, rows_number):
+    print("Multyplication table {0} by {1}: ".format(columns_number, rows_number))
+    for c in range(0, rows_number + 1):
+        interlinear(columns_number)
         print("|", end="")
-        for l in range(0, line_lenght + 1):
+        for l in range(0, columns_number + 1):
             x = multiply(c, l)
             if x == 0:
                 print("   |", end="")
                 continue
             if x < 10 :
                 print("  ", end="")
-            elif x == 100:
+            elif x >= 100:
                 print("", end="")
             else:
                 print(" ", end="")
             print(x, end="|")
         print()
-    interlinear(line_lenght)
+    interlinear(rows_number)
 
     # print example 10 to 10 table in initiation
 
@@ -47,4 +47,5 @@ multy_table(10, 10)
 
     # input request for printing x to y table
 
-multy_table(int(input("Write the columns number(x value): ")), int(input("Write the lines number(y value): ")))
+while True:
+    multy_table(int(input("Write the columns number(x value): ")), int(input("Write the rows number(y value): ")))
